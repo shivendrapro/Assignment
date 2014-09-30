@@ -29,6 +29,7 @@ EOH
 action :nothing
 end
 
+print("#{node["deployment"]["JENKINSURL"]}/lastSuccessfulBuild/artifact/Code.zip")
 remote_file "/tmp/Code.zip" do
   source "#{node["deployment"]["JENKINSURL"]}/lastSuccessfulBuild/artifact/Code.zip"
   mode '0644'
